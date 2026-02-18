@@ -23,3 +23,8 @@ results/
 service_account.json
 
 repo_loader.ipynb
+
+baselines/diffusionguard/
+baselines/mist/
+baselines/photoguard/
+project_dctroy/
