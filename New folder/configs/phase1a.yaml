@@ -1,0 +1,34 @@
+# Phase 1A Experimental Configs
+
+PHASE_NAME: "phase1a"
+
+DATASET:
+  BASE_PATH: "datasets/phase1a"
+  METADATA_DIR_NAME: ""
+  METADATA_FILE_NAME: "metadata.csv"
+  GSHEET_METADATA_FILE: "https://docs.google.com/spreadsheets/d/15PD4xEoMOXpEnOf7-WwiVhiOAJZks7iHWs1Dbtgc4Qg/export?format=csv&gid=0"
+  SRC_DIR_NAME: "src"
+  ORIG_DIR_NAME: "orig"
+  EDIT_DIR_NAME: "edited"
+
+RESULTS:
+  BASE_PATH: "results/phase1a"
+  PROTECTED_DIR_NAME: "protected"
+  COMPRESSED_DIR_NAME: "compressed"
+  PURIFIED_DIR_NAME: "purified"
+  RESULT_GSHEET:
+    NAME: "project_dctroy_results"
+    TAB_NAME: "PHASE_1A"
+  LOGGING:
+    BASE_PATH: "logs"
+
+TEMPS:
+  BASE_PATH: "temp"
+
+UPLOAD:
+  BASE_PATH: "research/dctroy/phase1a"
+  MAX_UPLOAD_WORKERS: 8 
+
+BATCH_SIZE: 3
+FREQUENCY_WEIGHTING: "high-pass"
+FREQUENCY_WEIGHT_DECAY: 1.0
