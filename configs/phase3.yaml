@@ -1,0 +1,67 @@
+# Phase 3 Experimental Configs - Comparative Evaluation
+
+PHASE_NAME: "phase3"
+
+DATASET:
+  BASE_PATH: "datasets/phase3"
+  METADATA_DIR_NAME: ""
+  METADATA_FILE_NAME: "metadata.csv"
+  GSHEET_METADATA_FILE: "https://docs.google.com/spreadsheets/d/1v3awCbs-86zkxSzgKHvsDf0NSa0gRawBBpFFyfXlHxM/export?format=csv&gid=0"
+  SRC_DIR_NAME: "src"
+  ORIG_DIR_NAME: "orig"
+  EDIT_DIR_NAME: "edited"
+  # Use 30% of dataset A and B for comparative evaluation
+  FRACTION: 0.30
+
+RESULTS:
+  BASE_PATH: "results/phase3"
+  # Separate directories for DCTroy (proposed) vs Baselines
+  DCTROY_DIR_NAME: "dctroy"
+  PHOTOGUARD_DIR_NAME: "photoguard"
+  MIST_DIR_NAME: "mist"
+  DIFFUSIONGUARD_DIR_NAME: "diffusionguard"
+  PROTECTED_DIR_NAME: "protected"
+  COMPRESSED_DIR_NAME: "compressed"
+  PURIFIED_DIR_NAME: "purified"
+  RESULT_GSHEET:
+    NAME: "project_dctroy_results"
+    TAB_NAME: "PHASE_3"
+  LOGGING:
+    BASE_PATH: "logs"
+
+TEMPS:
+  BASE_PATH: "temp"
+
+UPLOAD:
+  BASE_PATH: "research/dctroy/phase3"
+  MAX_UPLOAD_WORKERS: 8
+
+# Comparative evaluation settings
+BATCH_SIZE: 3 # Process images in batches
+
+# DCTroy (Proposed Method) - Using optimal config from Phase 2
+DCTROY:
+  FREQUENCY_WEIGHTING: "mid-pass" # Best pattern from Phase 1A
+  FREQUENCY_WEIGHT_DECAY: 1.0
+  EPS: 1.0
+  ALPHA: 0.1
+  ITERS: 1000
+  JPEG_QUALITY: 95
+
+# Baseline Methods for Comparison
+# All baselines use pixel-space perturbations
+
+PHOTOGUARD:
+  EPS: 0.06274 # 16/255
+  ALPHA: 0.00392 # 1/255
+  ITERS: 100
+
+MIST:
+  EPS: 0.06274 # 16/255
+  ALPHA: 0.00784 # 2/255
+  ITERS: 100
+
+DIFFUSIONGUARD:
+  EPS: 0.06274 # 16/255
+  ALPHA: 0.00588 # 1.5/255
+  ITERS: 100
